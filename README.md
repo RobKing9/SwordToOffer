@@ -1,4 +1,3 @@
-# SwordToOffer
 # 剑指offer简单思路与总结
 
 ## [剑指 Offer 03. 数组中重复的数字](https://leetcode.cn/problems/shu-zu-zhong-zhong-fu-de-shu-zi-lcof/)
@@ -23,7 +22,10 @@
 
 ## [剑指 Offer 09. 用两个栈实现队列](https://leetcode.cn/problems/yong-liang-ge-zhan-shi-xian-dui-lie-lcof/)
 
-用两个栈实现队列。一个栈用来加入元素，一个栈用来取出元素（先进的）；首先是入队，直接用入元素的那个栈加入即可；其次是出栈，首先看一下用于入元素的那个栈是不是空（返回-1），否则将入元素的栈中所有元素出栈，每个栈头放入到出元素的那个栈，最后从出元素的那个栈取出即可。
+用两个栈实现队列。从整体上来看就是实现入队和出队的操作
+
+- 入队：这时候用第一个栈，直接将元素放进去即可
+- 出队：如果只有一个栈，以为着只能去栈头，不满足我们出队先进先出的条件，所以我们需要第二个栈，这个栈主要是将第一个栈中的元素出栈放到第二个栈，这样一来第二个栈的栈头就是我们需要的队头了。
 
 ## [剑指 Offer 10- I. 斐波那契数列](https://leetcode.cn/problems/fei-bo-na-qi-shu-lie-lcof/)
 
@@ -43,9 +45,9 @@
 
 将绳子分成m段，每段相乘，求乘积最大值。我使用的方法是，开始从两段开始，分别找每种情况的最大值，可以知道，分出来的每段越近，乘积越大。所以可以依次求出每段的长度，求出每种情况的最大值，取最大即可。
 
-另外一种方法是动态规划，dp表示长度为i的绳子，最大乘积；对于一根绳子，一种情况是剪成两段：先剪`j`，然后剪`i-j`, `j*(i-j)`第二种情况是i-j继续剪  `j*dp[i-j]`
+另外一种方法是动态规划，dp表示长度为i的绳子，最大乘积；对于一根绳子，一种情况是剪成两段：先剪`j`，然后剪`i-j`, `j*(i-j)`第二种情况是`i-j`继续剪  `j*dp[i-j]`
 
-## [剑指 Offer 14- II. 剪绳子 II](https://leetcode.cn/problems/jian-sheng-zi-ii-lcof/)
+## ？[剑指 Offer 14- II. 剪绳子 II](https://leetcode.cn/problems/jian-sheng-zi-ii-lcof/)
 
 和上一题题目一样，只不过要对最后的结果取对。使用的方法是快速幂。
 
@@ -65,11 +67,11 @@
 
 在链表中找到指定的值，删除这个节点。考虑到第一个节点可能会被删除，所以需要借助哑巴结点，然后往后遍历，遇到值相等，指向下一个结点，最后返回`head.Next`即可。
 
-## [剑指 Offer 19. 正则表达式匹配](https://leetcode.cn/problems/zheng-ze-biao-da-shi-pi-pei-lcof/)
+## ？？[剑指 Offer 19. 正则表达式匹配](https://leetcode.cn/problems/zheng-ze-biao-da-shi-pi-pei-lcof/)
 
 使用的是动态规划，实在看不懂题解。。。。。。。。。。。。。。。
 
-## [剑指 Offer 20. 表示数值的字符串](https://leetcode.cn/problems/biao-shi-shu-zhi-de-zi-fu-chuan-lcof/)
+## ？？[剑指 Offer 20. 表示数值的字符串](https://leetcode.cn/problems/biao-shi-shu-zhi-de-zi-fu-chuan-lcof/)
 
 和上一题类似，看不懂。。。。。。。。。。。。。。。。。。。。。
 
@@ -98,7 +100,7 @@
 
 ## [剑指 Offer 26. 树的子结构](https://leetcode.cn/problems/shu-de-zi-jie-gou-lcof/)
 
-三个题目都是用递归方法，具体参考`二叉树`目录下的`递归.md`文件
+三个题目都是用递归方法，具体参考`二叉树_递归目录下的`递归.md`文件
 
 ## [剑指 Offer 29. 顺时针打印矩阵](https://leetcode.cn/problems/shun-shi-zhen-da-yin-ju-zhen-lcof/)
 
@@ -106,7 +108,7 @@
 
 ## [剑指 Offer 30. 包含min函数的栈](https://leetcode.cn/problems/bao-han-minhan-shu-de-zhan-lcof/)
 
-这一题就是增加一个栈，栈顶都是最小值。首先是`push`，普通栈就直接可以将元素`push`进去即可，但是最小栈只能`push`比栈顶小的元素，这时候`pop`就有讲究了，因为需要`pop`的值不一定在最小栈中，所以需要进行比较，如果在才`pop`，最后就是最小值，直接取最小栈的栈顶即可。
+这一题就是增加一个栈，栈顶都是最小值。首先是`push`，普通栈就直接可以将元素`push`进去即可，但是最小栈只能`push`比栈顶小的元素，这时候`pop`就有讲究了，因为需要`pop`的值不一定在最小栈中，所以需要进行比较，如果在，才会`pop`，最后就是最小值，直接取最小栈的栈顶即可。
 
 ## [剑指 Offer 31. 栈的压入、弹出序列](https://leetcode.cn/problems/zhan-de-ya-ru-dan-chu-xu-lie-lcof/)
 
@@ -118,7 +120,7 @@
 
 ## [剑指 Offer 32 - III. 从上到下打印二叉树 III](https://leetcode.cn/problems/cong-shang-dao-xia-da-yin-er-cha-shu-iii-lcof/)
 
-这一题的难度是逐渐增加的，第一道题是一层一层的加入到一个一维数组中，第二道题是每一层加入到一个二维数组，第三道题是偶数层的需要逆序输出。这三题都是考察层序遍历，都使用队列的方式实现，遍历每一层，每一层都有一个固定的元素个数，遍历他们，取对头，将队头的值加入到数组，然后出队，看一下这个队头有没有左右子树，有的话加入到指针数组。第三题主要是用一个标志位，如果是`true`的话，就需要反转，我们将这一层的数组结果反转一下就好了，然后`flag=!flag`
+这一题的难度是逐渐增加的，主要考察的是**层次遍历**。第一道题是一层一层的加入到一个一维数组中，第二道题是每一层加入到一个二维数组，第三道题是偶数层的需要逆序输出。这三题都是考察层序遍历，都使用队列的方式实现，遍历每一层，每一层都有一个固定的元素个数，遍历他们，取对头，将队头的值加入到数组，然后出队，看一下这个队头有没有左右子树，有的话加入到指针数组。第三题主要是用一个标志位，如果是`true`的话，就需要反转，我们将这一层的数组结果反转一下就好了，然后`flag=!flag`
 
 ## [剑指 Offer 33. 二叉搜索树的后序遍历序列](https://leetcode.cn/problems/er-cha-sou-suo-shu-de-hou-xu-bian-li-xu-lie-lcof/)
 
@@ -132,7 +134,9 @@
 
 这一题要求我们复制一个多了一个随机结点的复杂链表。我们采用的方法是**哈希表**，首先我们将值放到哈希表中，因为随机结点的指向是随机的，所以先要有值，再一次遍历，增加`Next`指针和`Random`指针`hashtable[cur].Random = hashtable[cur.Random]`。
 
-## [297. 二叉树的序列化与反序列化](https://leetcode.cn/problems/serialize-and-deserialize-binary-tree/)
+## ？？？[297. 二叉树的序列化与反序列化](https://leetcode.cn/problems/serialize-and-deserialize-binary-tree/)
+
+## ？？？[剑指 Offer 37. 序列化二叉树](https://leetcode.cn/problems/xu-lie-hua-er-cha-shu-lcof/)
 
 ## [剑指 Offer 38. 字符串的排列](https://leetcode.cn/problems/zi-fu-chuan-de-pai-lie-lcof/)
 
@@ -146,11 +150,13 @@
 
 直接从小到大进行排序，返回数组前k个元素即可。
 
+## ？？？[剑指 Offer 41. 数据流中的中位数](https://leetcode.cn/problems/shu-ju-liu-zhong-de-zhong-wei-shu-lcof/)
+
 ## [剑指 Offer 42. 连续子数组的最大和](https://leetcode.cn/problems/lian-xu-zi-shu-zu-de-zui-da-he-lcof/)
 
 这一题要求我们找到所以子数组和中的最大值。我们直接遍历一遍数组，很容易知道，当后面一个数加上前面一个数的和比自己还要小的时候，那么这样构成的数组肯定不是最大的，我们要从他变大的那一刻开始记录，当相加比自己大的时候，把自己变成这个最大值，然后再去和要求的最大值去比较，最后返回最大值即可。
 
-## [剑指 Offer 43. 1～n 整数中 1 出现的次数](https://leetcode.cn/problems/1nzheng-shu-zhong-1chu-xian-de-ci-shu-lcof/)
+## ？[剑指 Offer 43. 1～n 整数中 1 出现的次数](https://leetcode.cn/problems/1nzheng-shu-zhong-1chu-xian-de-ci-shu-lcof/)
 
 这一题是给我们一个n，让我们求出从1-n 1出现的次数。因为n可以足够大，所以普通的遍历肯定是求不出的，我们必须要找出规律。我们用cur表示当前位的值，low是低位的值，high是高位的值，digit表示位因子。我们的方法就是遍历所有的位，每一位的出现1的次数相加即可。当前位cur的值有三种情况我们需要去考虑
 
@@ -170,7 +176,7 @@ cur=n%10	low=0	high=n/10	digit=1
 low += cur*digit	cur=high%10		high /= 10		digit *= 10
 ```
 
-## [剑指 Offer 44. 数字序列中某一位的数字](https://leetcode.cn/problems/shu-zi-xu-lie-zhong-mou-yi-wei-de-shu-zi-lcof/)
+## ？[剑指 Offer 44. 数字序列中某一位的数字](https://leetcode.cn/problems/shu-zi-xu-lie-zhong-mou-yi-wei-de-shu-zi-lcof/)
 
 数字以0123456789101112131415…的格式序列化到一个字符序列中，我们的目标是给定一个位数，判断它的值。
 
@@ -207,13 +213,13 @@ low += cur*digit	cur=high%10		high /= 10		digit *= 10
    ```
 
 
-## [剑指 Offer 45. 把数组排成最小的数](https://leetcode.cn/problems/ba-shu-zu-pai-cheng-zui-xiao-de-shu-lcof/)
+## ？？[剑指 Offer 45. 把数组排成最小的数](https://leetcode.cn/problems/ba-shu-zu-pai-cheng-zui-xiao-de-shu-lcof/)
 
 使用快速排序的方法。
 
 ## [剑指 Offer 46. 把数字翻译成字符串](https://leetcode.cn/problems/ba-shu-zi-fan-yi-cheng-zi-fu-chuan-lcof/)
 
-剑指offer下的目录文件
+剑指offer下的`动态规划`目录文件
 
 ## [剑指 Offer 47. 礼物的最大价值](https://leetcode.cn/problems/li-wu-de-zui-da-jie-zhi-lcof/)
 
@@ -221,16 +227,32 @@ low += cur*digit	cur=high%10		high /= 10		digit *= 10
 
 ## [剑指 Offer 48. 最长不含重复字符的子字符串](https://leetcode.cn/problems/zui-chang-bu-han-zhong-fu-zi-fu-de-zi-zi-fu-chuan-lcof/)
 
-剑指offer目录下的文件。
+剑指offer`动态规划`目录下的文件。
 
 ## [剑指 Offer 49. 丑数](https://leetcode.cn/problems/chou-shu-lcof/)
 
-剑指offer目录下的文件。
+剑指offer`动态规划`目录下的文件。
 
 ## [剑指 Offer 50. 第一个只出现一次的字符](https://leetcode.cn/problems/di-yi-ge-zhi-chu-xian-yi-ci-de-zi-fu-lcof/)
 
 给定一个字符串，返回第一个只出现一次的字符。所以我们需要进行计数，首先可以用哈希表，遍历字符串进行计数，再次遍历返回第一个哈希值为1的字符，但是这种时间复杂度太高了，我们可以用26位数组来进行计数，下标是`s[i]-'a'`, 值就是次数，最后同样再次遍历即可。
 
-## [剑指 Offer 51. 数组中的逆序对](https://leetcode.cn/problems/shu-zu-zhong-de-ni-xu-dui-lcof/)
+## ？[剑指 Offer 51. 数组中的逆序对](https://leetcode.cn/problems/shu-zu-zhong-de-ni-xu-dui-lcof/)
 
-使用的事归并排序的方法，在合并的同时，如果左边的数大于右边的数，那么左边剩下的都是逆序对。
+使用的是**归并排序**的方法，在合并的同时，如果左边的数大于右边的数，那么左边剩下的都是逆序对。
+
+## [剑指 Offer 52. 两个链表的第一个公共节点](https://leetcode.cn/problems/liang-ge-lian-biao-de-di-yi-ge-gong-gong-jie-dian-lcof/)
+
+找到两个链表的第一个公共节点。我们采用的方法是双指针，两个指针分别遍历两个链表，当遍历到空节点的时候，就把头结点变成另一个的头结点继续遍历，如果有公共的那么一定会相遇，否则当他们都到nil的时候也会停止。
+
+## [剑指 Offer 53 - I. 在排序数组中查找数字 I](https://leetcode.cn/problems/zai-pai-xu-shu-zu-zhong-cha-zhao-shu-zi-lcof/)
+
+直接遍历数组，如果和目标值相等的话，返回的结果加一，最后将结果返回即可。
+
+## [剑指 Offer 53 - II. 0～n-1中缺失的数字](https://leetcode.cn/problems/que-shi-de-shu-zi-lcof/)
+
+还是一样遍历数组，因为下标和值是相等的，所以当遇到不相等的情况返回下标即可。注意的是可能会出现没有缺失的情况，这时候返回数组的长度即可，也就是后一位数字
+
+## [剑指 Offer 54. 二叉搜索树的第k大节点](https://leetcode.cn/problems/er-cha-sou-suo-shu-de-di-kda-jie-dian-lcof/)
+
+因为是搜索树，我们可以通过中序遍历将节点的值加入到一个数组，那么这个数组将会是一个递增数组，最后通过这个数组即可找到第k大节点。
