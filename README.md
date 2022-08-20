@@ -256,3 +256,27 @@ low += cur*digit	cur=high%10		high /= 10		digit *= 10
 ## [剑指 Offer 54. 二叉搜索树的第k大节点](https://leetcode.cn/problems/er-cha-sou-suo-shu-de-di-kda-jie-dian-lcof/)
 
 因为是搜索树，我们可以通过中序遍历将节点的值加入到一个数组，那么这个数组将会是一个递增数组，最后通过这个数组即可找到第k大节点。
+
+## [剑指 Offer 55 - I. 二叉树的深度](https://leetcode.cn/problems/er-cha-shu-de-shen-du-lcof/)
+
+这一题直接使用分治递归，先算出左边子树的高度，再算出右边子树的高度，比较一下，哪一个大加一即可。然后递归的进行这样操作
+
+## [剑指 Offer 55 - II. 平衡二叉树](https://leetcode.cn/problems/ping-heng-er-cha-shu-lcof/)
+
+平衡二叉树要求左右子树的高度不能超过1，我们还是和上一题一样使用分治递归法，先算出左子树的最大深度，再算出右子树的最大深度，然后要求差值绝对值不能大于1，然后递归，左边也得是平衡二叉树，右边也得是平衡二叉树。
+
+## [剑指 Offer 56 - I. 数组中数字出现的次数](https://leetcode.cn/problems/shu-zu-zhong-shu-zi-chu-xian-de-ci-shu-lcof/)
+
+这一题使用的是位运算，具体见位运算目录下的文件。
+
+## [剑指 Offer 56 - II. 数组中数字出现的次数 II](https://leetcode.cn/problems/shu-zu-zhong-shu-zi-chu-xian-de-ci-shu-ii-lcof/)
+
+这一题使用的是位运算，具体见位运算目录下的文件。
+
+## [剑指 Offer 57. 和为s的两个数字](https://leetcode.cn/problems/he-wei-sde-liang-ge-shu-zi-lcof/)
+
+从一个升序排列的数组找到两个和为target的数。我们使用的是双指针法，左指针和右指针对应的两个数之和与target进行比较，如果大于的话，那么右指针左移动；如果小于target的话，左指针右移动，等于break，返回结果即可。
+
+## [剑指 Offer 57 - II. 和为s的连续正数序列](https://leetcode.cn/problems/he-wei-sde-lian-xu-zheng-shu-xu-lie-lcof/)
+
+这一题使用的是滑动窗口，我们维护一个窗口，在这个窗口里的值总和，如果小于target，右边界移动，和增加，如果大于target，左边界移动，和减小，如果大于等于target，返回结果，然后继续左边界右移动，总和减小，继续寻找其他的结果。
