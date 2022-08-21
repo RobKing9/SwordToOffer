@@ -280,3 +280,15 @@ low += cur*digit	cur=high%10		high /= 10		digit *= 10
 ## [剑指 Offer 57 - II. 和为s的连续正数序列](https://leetcode.cn/problems/he-wei-sde-lian-xu-zheng-shu-xu-lie-lcof/)
 
 这一题使用的是滑动窗口，我们维护一个窗口，在这个窗口里的值总和，如果小于target，右边界移动，和增加，如果大于target，左边界移动，和减小，如果大于等于target，返回结果，然后继续左边界右移动，总和减小，继续寻找其他的结果。
+
+## [剑指 Offer 58 - I. 翻转单词顺序](https://leetcode.cn/problems/fan-zhuan-dan-ci-shun-xu-lcof/)
+
+这一题使用的是双指针。具体见`数组_双指针_滑动窗口`目录下的文件
+
+## [剑指 Offer 58 - II. 左旋转字符串](https://leetcode.cn/problems/zuo-xuan-zhuan-zi-fu-chuan-lcof/)
+
+直接用一个字符串加入n到最后，再加上到n即可。
+
+## [剑指 Offer 59 - I. 滑动窗口的最大值](https://leetcode.cn/problems/hua-dong-chuang-kou-de-zui-da-zhi-lcof/)
+
+这一题使用的方法是单调双向队列，具体见`数组_双指针_滑动窗口`目录。
