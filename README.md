@@ -292,3 +292,18 @@ low += cur*digit	cur=high%10		high /= 10		digit *= 10
 ## [剑指 Offer 59 - I. 滑动窗口的最大值](https://leetcode.cn/problems/hua-dong-chuang-kou-de-zui-da-zhi-lcof/)
 
 这一题使用的方法是单调双向队列，具体见`数组_双指针_滑动窗口`目录。
+
+## [剑指 Offer 59 - II. 队列的最大值](https://leetcode.cn/problems/dui-lie-de-zui-da-zhi-lcof/)
+
+用两个队列来实现，一个队列单纯入队，一个队列是单调队列，使得每次队头都是最大值
+
+- push的时候，正常队列直接入队即可，单调队列则需要从队尾判断是否小于将要入队的值，如果小于的话，那么就需要从队尾出队，这就意味着这个队列是一个双向队列，既可以从队尾出队，也可以正常从队头出队
+- pop的时候，正常队列每次直接出队即可，单调队列则需要判断正常队列的值和自己的队头是否相等，如果相等的话就要pop出去
+
+## [剑指 Offer 60. n个骰子的点数](https://leetcode.cn/problems/nge-tou-zi-de-dian-shu-lcof/)
+
+这一题使用的方法是动态规划，具体见`动态规划`目录。
+
+## [剑指 Offer 61. 扑克牌中的顺子](https://leetcode.cn/problems/bu-ke-pai-zhong-de-shun-zi-lcof/)
+
+这一题要求给的五张牌是一个顺子，也就是连续的数字，而大王小王是0，可以变成任意的值让他们变成顺子。很容易知道除了0之外的其余所有数字，最大值和最小值相差需要小于5才能保证是顺子，另外还需要保证不能有重复的数字出现（除零之外），可以用哈希表进行判断。
