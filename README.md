@@ -307,3 +307,18 @@ low += cur*digit	cur=high%10		high /= 10		digit *= 10
 ## [剑指 Offer 61. 扑克牌中的顺子](https://leetcode.cn/problems/bu-ke-pai-zhong-de-shun-zi-lcof/)
 
 这一题要求给的五张牌是一个顺子，也就是连续的数字，而大王小王是0，可以变成任意的值让他们变成顺子。很容易知道除了0之外的其余所有数字，最大值和最小值相差需要小于5才能保证是顺子，另外还需要保证不能有重复的数字出现（除零之外），可以用哈希表进行判断。
+
+## [剑指 Offer 62. 圆圈中最后剩下的数字](https://leetcode.cn/problems/yuan-quan-zhong-zui-hou-sheng-xia-de-shu-zi-lcof/)
+
+这是一个数学问题，具体见`数学问题`目录
+
+## [剑指 Offer 63. 股票的最大利润](https://leetcode.cn/problems/gu-piao-de-zui-da-li-run-lcof/)
+
+给定一个利润数组，要求我们求出最大股票利润。我们知道的是最大利润应该是之后的利润减去之前的利润的最大差值，我们可以遍历数组，先求出当前最大利润，就是当前利润减去之前的最小利润，然后再求出最小利润，不断的去更新这两个值，最后返回最大利润即可。
+
+## [剑指 Offer 64. 求1+2+…+n](https://leetcode.cn/problems/qiu-12n-lcof/)
+
+这是一道小学数学题目。直接返回 `(1+n)*n/2`即可。
+
+## [剑指 Offer 65. 不用加减乘除做加法](https://leetcode.cn/problems/bu-yong-jia-jian-cheng-chu-zuo-jia-fa-lcof/)
+
