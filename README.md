@@ -322,3 +322,23 @@ low += cur*digit	cur=high%10		high /= 10		digit *= 10
 
 ## [剑指 Offer 65. 不用加减乘除做加法](https://leetcode.cn/problems/bu-yong-jia-jian-cheng-chu-zuo-jia-fa-lcof/)
 
+这是一道位运算题目，具体见`位运算`目录。
+
+## [剑指 Offer 66. 构建乘积数组](https://leetcode.cn/problems/gou-jian-cheng-ji-shu-zu-lcof/)
+
+要求我们构造一个乘积数组，每一个值是除了当前数组的值外其他所有的相乘。每个值在自己这个下标的时候就是乘以1，所以就形成了上下两个三角形，我们只需要相乘就好
+
+1. 第一步遍历数组，直接赋值`res[i] = res[i-1] * a[i-1]`
+2. 第二步再次遍历数组，用一个辅助来保存值，最后再和res数组的值相乘
+
+## [剑指 Offer 67. 把字符串转换成整数](https://leetcode.cn/problems/ba-zi-fu-chuan-zhuan-huan-cheng-zheng-shu-lcof/)
+
+用一个标志来表示正负号，一开始先处理之前的字符，如果是空格就跳过，如果是负号，标志变为-1，然后遍历字符串，`res=res*10+int(str[i]-'0')`,str[i]='0'主要是将数字字符化为数字，然后判断res是否超出32位整数范围，最后返回`flag*res`
+
+## [剑指 Offer 68 - I. 二叉搜索树的最近公共祖先](https://leetcode.cn/problems/er-cha-sou-suo-shu-de-zui-jin-gong-gong-zu-xian-lcof/)
+
+直接判断两个节点和根节点的大小，如果都大于，说明两个节点最近公共祖先在右子树；如果都小于，说明两个节点最近公共祖先在左子树，否者就是根节点，然后递归即可。
+
+## [剑指 Offer 68 - II. 二叉树的最近公共祖先](https://leetcode.cn/problems/er-cha-shu-de-zui-jin-gong-gong-zu-xian-lcof/)
+
+分别在左子树和右子树递归的查找两个节点，如果左右两边都找到的话，说明两个节点在左右两子树，返回root，如果只在左子树找到，返回left即可，在右子树返回右即可。
