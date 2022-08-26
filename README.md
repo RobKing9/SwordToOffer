@@ -47,6 +47,10 @@
 
 另外一种方法是动态规划，dp表示长度为i的绳子，最大乘积；对于一根绳子，一种情况是剪成两段：先剪`j`，然后剪`i-j`, `j*(i-j)`第二种情况是`i-j`继续剪  `j*dp[i-j]`
 
+## [面试题13. 机器人的运动范围](https://leetcode.cn/problems/ji-qi-ren-de-yun-dong-fan-wei-lcof/)
+
+满足条件数位和不大于k。使用的是深度优先遍历，用标记数组来标记访问过的元素。
+
 ## ？[剑指 Offer 14- II. 剪绳子 II](https://leetcode.cn/problems/jian-sheng-zi-ii-lcof/)
 
 和上一题题目一样，只不过要对最后的结果取对。使用的方法是快速幂。
